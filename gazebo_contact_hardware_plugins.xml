@@ -1,7 +1,7 @@
 <library path="gazebo_contact_hardware_plugins">
   <class
-    name="gazebo_ros2_control_contact/GazeboContactSystem"
-    type="gazebo_ros2_control_contact::GazeboContactSystem"
+    name="gazebo_ros2_control/GazeboContactSystem"
+    type="gazebo_ros2_control::GazeboContactSystem"
     base_class_type="gazebo_ros2_control::GazeboSystemInterface">
     <description>
       GazeboPositionJoint

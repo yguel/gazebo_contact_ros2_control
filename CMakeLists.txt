@@ -21,20 +21,20 @@ link_directories(
 )
 
 # Libraries
-# add_library(${PROJECT_NAME} SHARED
-#   src/gazebo_cotnact_ros2_control_plugin.cpp
-# )
-# ament_target_dependencies(${PROJECT_NAME}
-#   angles
-#   controller_manager
-#   gazebo_dev
-#   gazebo_ros
-#   hardware_interface
-#   pluginlib
-#   rclcpp
-#   yaml_cpp_vendor
-#   gazebo_ros2_control
-# )
+add_library(${PROJECT_NAME} SHARED
+  src/gazebo_contact_ros2_control_plugin.cpp
+)
+ament_target_dependencies(${PROJECT_NAME}
+  angles
+  controller_manager
+  gazebo_dev
+  gazebo_ros
+  hardware_interface
+  pluginlib
+  rclcpp
+  yaml_cpp_vendor
+  gazebo_ros2_control
+)
 
 
 SET(HARDWARE_PLUGIN_NAME gazebo_contact_hardware_plugins)
@@ -51,7 +51,7 @@ ament_target_dependencies(${HARDWARE_PLUGIN_NAME}
 
 ## Install
 install(TARGETS 
-  #${PROJECT_NAME}
+  ${PROJECT_NAME}
   ${HARDWARE_PLUGIN_NAME}
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
@@ -75,7 +75,7 @@ ament_export_dependencies(
 )
 
 ament_export_libraries(
-  #${PROJECT_NAME}
+  ${PROJECT_NAME}
   ${HARDWARE_PLUGIN_NAME}
 )
 
