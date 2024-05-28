@@ -332,6 +332,22 @@ void GazeboContactRosControlPlugin::Load(gazebo::physics::ModelPtr parent,
   }
   try
   {
+    /**
+     * ClassLoader(
+     *  std::string package,
+     *  std::string base_class,
+     *  std::string attrib_name = std::string("plugin"),
+     *  std::vector<std::string> plugin_xml_paths = std::vector<std::string>());
+     *
+     * \param package The package containing the base class
+     * \param base_class The type of the base class for classes to be loaded
+     * \param attrib_name The attribute to search for in manifext.xml files,
+     * defaults to "plugin"
+     * \param plugin_xml_paths The list of paths of
+     * plugin.xml files, defaults to be crawled via ros::package::getPlugins()
+     * \throws pluginlib::ClassLoaderException if package manifest cannot be
+     * found
+     */
     impl_->robot_hw_sim_loader_.reset(
       new pluginlib::ClassLoader<gazebo_ros2_control::GazeboSystemInterface>(
         "gazebo_contact_ros2_control",
